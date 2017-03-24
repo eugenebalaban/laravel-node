@@ -1,5 +1,6 @@
 FROM node:6-alpine
 
-COPY . /var/www/html
+RUN apk --update add python make g++ \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR /var/www/html
